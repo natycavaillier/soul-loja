@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormaDePagamento, Servico } from 'src/app/models/servico';
 
 @Component({
   selector: 'app-servico',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicoComponent implements OnInit {
 
-  imagem: string = '../../../assets/img/imagemServico1.jpg';
-  nomeDoServico: string = 'Suporte ao Cliente';
-  descricao: string = 'Uma descrição super interessante';
+  servico: Servico = {
+    imagem: '../../../assets/img/imagemServico1.jpg',
+    nomeDoServico: 'Suporte ao Cliente',
+    descricao: 'Uma descrição super interessante',
+    preco: 100,
+    desconto: 0.2, //0 a 1
+    formaDePagamento: FormaDePagamento.AVISTA
+} 
+
+precoDesconto(){
+  return this.servico.preco - (this.servico.preco * this.servico.desconto);
+}
 
   constructor() { }
 
