@@ -1,9 +1,26 @@
 <div class="card mb-1" style="width: 18rem;">
-    <img src="https://i.picsum.photos/id/953/400/400.jpg?hmac=sCGl1xt9pdRyzGnhO5N_HVo_bObR1VVbUitw72cZ7K4" class="card-img-top" alt="...">
+    <img [src]="produto.imagem" class="card-img-top" alt="...">
     <div class="card-body">
-        <h5 class="card-title">Nome do Produto</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum accusamus reprehenderit et minus quo excepturi quam possimus, modi voluptas laboriosam eum nulla labore dolore consequuntur, dicta ex, sit ratione id?
-            content.</p>
-        <button class="btn btn-primary">Comprar</button>
+        <h5 class="card-title">{{produto.nomeDoProduto}}</h5>
+        <p class="card-text">{{produto.descricao}}</p>
+        <h3 [ngClass]="{'text-muted riscado': produto.emPromocao, 'text-success': !produto.emPromocao}">{{produto.preco
+            | currency: 'BRL'}}</h3>
+        <div *ngIf="produto.emPromocao">
+            <h3 class="text-success">{{precoDesconto() | currency: 'BRL'}}</h3>
+            <h3>
+                <span [ngStyle]="{'font-family': 'monospace'}" class="badge bg-success">
+                    {{produto.desconto | percent}} OFF
+                </span>
+            </h3>
+        </div>
+
+        <div [ngSwitch]="produto.categoria">
+            <span class="badge bg-success" *ngSwitchCase="'eletro'">Eletrônicos</span>
+            <span class="badge bg-waning" *ngSwitchCase="'moveis'">Móveis</span>
+            <span class="badge bg-danger" *ngSwitchCase="'limpeza'">Limpeza</span>
+            <span class="badge bg-dark" *ngSwitchDefault>Outros</span>
+        </div>
+        
+        <button class="btn btn-primary" (click)="onComprar()">Comprar</button>
     </div>
 </div>

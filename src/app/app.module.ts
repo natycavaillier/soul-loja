@@ -10,6 +10,8 @@ import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ProdutoComponent } from './components/produto/produto.component';
 import { ServicosComponent } from './components/servicos/servicos.component';
 import { ServicoComponent } from './components/servico/servico.component';
+import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ServicoComponent } from './components/servico/servico.component';
     ProdutosComponent,
     ProdutoComponent,
     ServicosComponent,
-    ServicoComponent
+    ServicoComponent,
+    TesteDataBindingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
