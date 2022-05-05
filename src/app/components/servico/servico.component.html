@@ -1,10 +1,12 @@
 
 <div class="card m-3" style="width: 20rem;">
-    <img [src]="servico.imagem" class="card-img-top" alt="...">
+    <img [src]="servico.imagem" class="card-img-top servico-img" alt="...">
     <div class="card-body">
         <h5 class="card-title">{{servico.nomeDoServico}}</h5>
         <p class="card-text">{{servico.descricao}}</p>
-        <div *ngIf="servico.formaDePagamento == 'avista'">
+        <h3 [ngClass]="{'text-muted riscado': servico.emPromocao, 'text-success': !servico.emPromocao}">{{servico.preco
+            | currency: 'BRL'}}</h3>
+        <div *ngIf="servico.emPromocao">
             <h3 class="text-success">{{precoDesconto() | currency: 'BRL'}}</h3>
             <h3>
                 <span [ngStyle]="{'font-family': 'monospace'}" class="badge bg-success">
@@ -12,6 +14,13 @@
                 </span>
             </h3>
         </div>
-        <button class="btn btn-primary">Contrate agora</button>
+
+        <div [ngSwitch]="servico.categoria">
+            <span class="badge bg-success" *ngSwitchCase="'corte'">Corte</span>
+            <span class="badge bg-warning" *ngSwitchCase="'depilacao'">Depilação</span>
+            <span class="badge bg-danger" *ngSwitchCase="'manicure'">Manicure</span>
+        </div>
+
+        <button (click)="onComprar()" class="btn btn-primary">Contrate agora</button>
     </div>
 </div>

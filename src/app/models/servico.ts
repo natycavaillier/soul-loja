@@ -3,12 +3,14 @@ export interface Servico {
     nomeDoServico: string;
     descricao: string;
     preco: number;
+    emPromocao: boolean;
     desconto: number; //0 a 1
-    formaDePagamento: FormaDePagamento;
+    categoria: categoriaDoServico;
 }
 
 
-export enum FormaDePagamento {
-    AVISTA = 'avista',
-    CREDITO = 'credito'
+export enum categoriaDoServico {
+    CORTE = 'corte',
+    DEPILACAO = 'depilacao',
+    MANICURE = 'manicure'
 }

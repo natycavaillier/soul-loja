@@ -1,9 +1,14 @@
 <h1>Serviços</h1>
 <hr>
-<div class="card-group mx-3 d-flex justify-content-center">
-    <app-servico></app-servico>
-    <app-servico></app-servico>
-    <app-servico></app-servico>
+<div class="mx-1">
+    <div class="container">
+        <div class="row">
+            <div class="col" *ngFor="let servico of servicos">
+                <app-servico [dadoServico]="servico"></app-servico>
+            </div>
+        </div>
+    </div>
+    
 </div>
 
 

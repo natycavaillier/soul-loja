@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CategoriaProduto, Produto } from 'src/app/models/produto';
 
 @Component({
@@ -8,24 +8,19 @@ import { CategoriaProduto, Produto } from 'src/app/models/produto';
 })
 export class ProdutoComponent implements OnInit {
 
-  produto: Produto = {
-    imagem: 'https://i.picsum.photos/id/953/400/400.jpg?hmac=sCGl1xt9pdRyzGnhO5N_HVo_bObR1VVbUitw72cZ7K4',
-    nomeDoProduto: 'Nome do Produto',
-    descricao: 'Uma descrição super interessante',
-    preco: 20.5,
-    emPromocao: true,
-    desconto: 0.1, //10%
-    categoria: CategoriaProduto.ELETRO
-  }
+  @Input('dadoProduto') produto!: Produto; //Torna a propriedade uma propriedade de entrada do componente
+  @Output() onCarrinho = new EventEmitter<Produto>();
 
+  
   precoDesconto(){
     return this.produto.preco - (this.produto.preco * this.produto.desconto);
   }
 
-  constructor() { }
+  constructor() {}
 
   onComprar(){
     alert("Produto adicionado no carrinho!");
+    this.onCarrinho.emit(this.produto);
   }
 
   ngOnInit(): void {

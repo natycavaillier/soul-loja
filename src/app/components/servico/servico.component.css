@@ -1,0 +1,8 @@
+.riscado {
+    text-decoration: line-through;
+}
+
+.servico-img {
+    max-height: 300px;
+    object-fit: cover;
+}
