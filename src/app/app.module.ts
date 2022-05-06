@@ -12,6 +12,14 @@ import { ServicosComponent } from './components/servicos/servicos.component';
 import { ServicoComponent } from './components/servico/servico.component';
 import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { EllipsisPipe } from './shared/pipes/ellipsis/ellipsis.pipe';
+import { AbbvPipe } from './shared/pipes/abbv/abbv.pipe';
+import { PowPipe } from './shared/pipes/pow/pow.pipe';
+import { SumPipe } from './shared/pipes/sum/sum.pipe';
+import { ProductArrayPipe } from './shared/pipes/product-array/product-array.pipe';
+import { ObjsEmailPipe } from './shared/pipes/obfs-email/objs-email.pipe';
+import { PercentagePipe } from './shared/pipes/percentage/percentage.pipe';
+import { CensorPipe } from './shared/pipes/censor/censor.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +30,15 @@ import { FormsModule } from '@angular/forms';
     ProdutoComponent,
     ServicosComponent,
     ServicoComponent,
-    TesteDataBindingComponent
+    TesteDataBindingComponent,
+    EllipsisPipe,
+    AbbvPipe,
+    PowPipe,
+    SumPipe,
+    ProductArrayPipe,
+    ObjsEmailPipe,
+    PercentagePipe,
+    CensorPipe
   ],
   imports: [
     BrowserModule,

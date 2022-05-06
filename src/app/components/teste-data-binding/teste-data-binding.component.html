@@ -23,5 +23,64 @@
     <hr>
     <input class="form-control" type="text" [(ngModel)] = "labelLink" >
     <button class="btn btn-success" (click)="onLimpar()">Limpar</button>
-    
+</div>
+
+<div class="my-3">
+    <h1>Pipes</h1>
+    <hr />
+    <h3>DatePipe</h3>
+    <p>Formatar datas</p>
+    <p>{{hoje | date}}</p>
+    <p>{{hoje | date:'medium'}}</p>
+    <p>{{hoje | date:'shortTime'}}</p>
+    <p>{{hoje | date:'dd/MM/YYYY'}}</p>
+    <p>{{hoje | date:'dd-MM-YYYY'}}</p>
+    <p>{{hoje | date:'dd/MM/YYYY hh:mm:ss'}}</p>
+    <hr>
+    <h3>Currency</h3>
+    <p>Formata números em formatos monetários</p>
+    <p>{{numero | currency}}</p>
+    <p>{{numero | currency: 'BRL'}}</p>
+    <p>{{numero | currency: 'BRL':'code'}}</p>
+    <!-- O que está sendo feito na linha abaixo: No minimo 1 numero nos inteiros, e nos decimais deve ter no minimo 3 e no maximo 9 -->
+    <p>{{numero | currency: 'BRL':'symbol':'1.3-8'}}</p>
+    <p>{{0.422342242 | currency: 'BRL':'symbol':'1.3-8'}}</p>
+    <p>{{numero | currency: 'BRL':'symbol':'4.3-8'}}</p>
+
+    <h3>Percent</h3>
+    <p>Representa como percentual</p>
+    <p>{{valor | percent}}</p>
+    <p>{{valor | percent: '1.2-2'}}</p>
+
+    <h3>Decimal</h3>
+    <p>Formata numeros</p>
+    <p>{{valor | number}}</p>
+    <p>{{valor | number: '1.2-2'}}</p>
+
+    <h3>Uppercase e Lowercase</h3>
+    <p>{{mensagem | uppercase}}</p>
+    <p>{{mensagem | lowercase}}</p>
+    <p>{{mensagem | titlecase}}</p>
+
+    <h1>{{agora | date: 'hh:mm:ss'}}</h1>
+    <p>{{'Olá como vai? Me chamo Natália, tenho 21 anos, moro em Salvador, Bahia' | ellipsis: 20}}</p>
+
+    <p>{{'Natália Cavaillier de Abreu' | abbv}}</p>
+    <p>{{'João' | abbv}}</p>
+    <h3>Pipe Potência</h3>
+    <p>{{3 | pow}}</p>
+    <p>{{3 | pow: 3}}</p>
+
+    <p>{{array | json}}</p>
+    <p>{{array | sum}}</p>
+    <button class="btn btn-primary" (click)="addArray()">
+        ADD
+    </button>
+
+    <h3>Pipe product-array</h3>
+    <p>{{array2}}</p>
+    <p>{{array2 | productArray}}</p>
+
+    <h3>Pipe censor</h3>
+    <p>{{'Eu jogo lol e valorant' | censor: 'lol,valorant'}}</p>
 </div>
