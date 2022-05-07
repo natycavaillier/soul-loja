@@ -8,14 +8,14 @@ import { categoriaDoServico, Servico } from 'src/app/models/servico';
 })
 export class ServicoComponent implements OnInit {
 
-  @Input('dadoServico') servico!: Servico;
+@Input('dadoServico') servico!: Servico;
 
 precoDesconto(){
   return this.servico.preco - (this.servico.preco * this.servico.desconto);
 }
 
 onComprar(){
-  alert("Produto adicionado no carrinho!");
+  alert("Serviço adicionado no carrinho!");
 }
   constructor() { }
 

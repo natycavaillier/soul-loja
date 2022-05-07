@@ -78,8 +78,14 @@
     </button>
 
     <h3>Pipe product-array</h3>
-    <p>{{array2}}</p>
-    <p>{{array2 | productArray}}</p>
+    <p>{{arrayProductArray}}</p>
+    <p>{{arrayProductArray | productArray}}</p>
+
+    <h3>Objs Email</h3>
+    <p>{{'nataliacavaillier@gmail.com' | objsEmail}}</p>
+
+    <h3>Percentage</h3>
+    <p>{{5 | percentage: 50}}</p>
 
     <h3>Pipe censor</h3>
     <p>{{'Eu jogo lol e valorant' | censor: 'lol,valorant'}}</p>

@@ -21,7 +21,7 @@ export class TesteDataBindingComponent implements OnInit, OnDestroy {
   idInterval?: any;
 
   array: number[] = [10, 20, 30];
-  array2: number[] = [1, 2, 3, 4];
+  arrayProductArray: number[] = [1, 2, 3, 4];
 
   addArray(){
     this.array.push(1)
