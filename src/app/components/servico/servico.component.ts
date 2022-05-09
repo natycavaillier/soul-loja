@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { categoriaDoServico, Servico } from 'src/app/models/servico';
 
 @Component({
@@ -8,14 +8,17 @@ import { categoriaDoServico, Servico } from 'src/app/models/servico';
 })
 export class ServicoComponent implements OnInit {
 
+//@Input('alertAdicaoNoCarrinho') alertAdicaoNoCarrinho!: string;
 @Input('dadoServico') servico!: Servico;
+@Output('onCarrinho') onCarrinho = new EventEmitter<Servico>();
 
 precoDesconto(){
   return this.servico.preco - (this.servico.preco * this.servico.desconto);
 }
 
 onComprar(){
-  alert("Serviço adicionado no carrinho!");
+  this.onCarrinho.emit(this.servico);
+  alert('Carrinho atualizado!');
 }
   constructor() { }
 

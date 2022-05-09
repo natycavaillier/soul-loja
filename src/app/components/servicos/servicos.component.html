@@ -1,48 +1,18 @@
 <h1>Serviços</h1>
 <hr>
 <div class="mx-1">
+    <p>Serviços no carrinho:
+        <span class="badge bg-primary">{{carrinho.length}}</span>
+    </p>
     <div class="container">
         <div class="row">
             <div class="col" *ngFor="let servico of servicos">
-                <app-servico [dadoServico]="servico"></app-servico>
+                <!--[alertAdicaoNoCarrinho]="alertAdicaoNoCarrinho">-->
+                <app-servico  [dadoServico]="servico" (onCarrinho)="addCarrinho($event)">
+                    <p class="text-muted" *ngIf="servicoNoCarrinho(servico)">{{avisoServicoNoCarrinho}}</p>
+                </app-servico>
             </div>
         </div>
     </div>
     
 </div>
-
-
-<!--
-<div class="container row m-auto">
-    <div class="row row-cols-4">
-        <div class="col">
-            <app-servico></app-servico>
-        </div>
-        <div class="col">
-            <app-servico></app-servico>
-        </div>
-        <div class="col">
-            <app-servico></app-servico>
-        </div>
-        <div class="col">
-            <app-servico></app-servico>
-        </div>
-    </div>
-</div>
-<div class="container row m-auto">
-    <div class="row row-cols-4">
-        <div class="col">
-            <app-servico></app-servico>
-        </div>
-        <div class="col">
-            <app-servico></app-servico>
-        </div>
-        <div class="col">
-            <app-servico></app-servico>
-        </div>
-        <div class="col">
-            <app-servico></app-servico>
-        </div>
-    </div>
-</div>
--->
