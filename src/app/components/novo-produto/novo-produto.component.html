@@ -1,1 +1,42 @@
-<p>novo-produto works!</p>
+<form #novoProdForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="nomeDoProduto">Nome do Produto</label>
+        <input #nomeInp="ngModel" id="nomeDoProduto" name="nomeDoProduto" [(ngModel)]="produto.nomeDoProduto" type="text" class="form-control" required>
+        <small *ngIf="nomeInp.touched && nomeInp.invalid" class="text-danger">O campo é inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="descricao">Descrição</label>
+        <input #descricaoInp="ngModel" id="descricao" name="descricao" [(ngModel)]="produto.descricao" type="text" class="form-control" required>
+        <small *ngIf="descricaoInp.touched && descricaoInp.invalid" class="text-danger">O campo é inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="imagem">Imagem</label>
+        <input #imgInp="ngModel" id="imagem" name="imagem" [(ngModel)]="produto.imagem" type="url" class="form-control" required>
+        <small *ngIf="imgInp.touched && imgInp.invalid" class="text-danger">O campo é inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="preco">Preço</label>
+        <input #precoInp="ngModel" id="preco" name="preco" [(ngModel)]="produto.preco" type="number" class="form-control" required>
+        <small *ngIf="precoInp.touched && precoInp.invalid" class="text-danger">O campo é inválido</small>
+    </div>
+    <div class="mb-3">
+        <label for="categoria">Categoria</label>
+        <select id="categoria" class="form-select" name="categoria" [(ngModel)]="produto.categoria">
+            <option disabled>Selecione uma categoria</option>
+            <option value="eletro">Eletrônicos</option>
+            <option value="limpeza">Limpeza</option>
+            <option value="moveis">Móveis</option>
+        </select>
+    </div>
+    <div class="form-check form-switch">
+        <label for="emPromocao" class="form-check-label">Em promoção?</label>
+        <input id="emPromocao" name="emPromocao" [(ngModel)]="produto.emPromocao" type="checkbox" class="form-check-input">
+    </div>
+    <div *ngIf="produto.emPromocao" class="mb-3">
+        <label for="desconto">Desconto</label>
+        <input #descontoInp="ngModel" id="desconto" name="desconto" [(ngModel)]="produto.desconto" type="number" class="form-control" min="0" max="1" step=".01" required>
+        <small *ngIf="descontoInp.touched && descontoInp.invalid" class="text-danger">O campo é inválido</small>
+    </div>
+    <button class="btn btn-primary" [disabled]="novoProdForm.invalid" >Criar produto</button>
+</form>
+<!-- <app-produto [dadoProduto]="produto"></app-produto> -->
