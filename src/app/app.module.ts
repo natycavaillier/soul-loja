@@ -26,6 +26,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { FeedbackUsuarioComponent } from './components/feedback-usuario/feedback-usuario.component';
+import { NovaLojaComponent } from './components/nova-loja/nova-loja.component';
+import { NovoServicoComponent } from './components/novo-servico/novo-servico.component';
 
 registerLocaleData(localePt);
 
@@ -50,7 +53,10 @@ registerLocaleData(localePt);
     HomeComponent,
     LoginComponent,
     NovoProdutoComponent,
-    CadastroComponent
+    CadastroComponent,
+    FeedbackUsuarioComponent,
+    NovaLojaComponent,
+    NovoServicoComponent
   ],
   imports: [
     BrowserModule,

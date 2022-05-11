@@ -1,0 +1,31 @@
+<form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="m-1">
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input formControlName="nome" id="nome" type="text" class="form-control">
+        <small class="text-danger" *ngIf="nome?.touched && nome?.invalid">
+            <span *ngIf="nome?.hasError('required')">O nome é obrigatório</span>
+            <span *ngIf="nome?.hasError('minlength')">O mínimo é 5 caracteres</span>
+        </small>
+        <!-- Mostra com json quais erros estão acontecendo -->
+        <!-- <p>{{nome?.errors | json}}</p> -->
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input formControlName="email" id="email" type="email" class="form-control">
+        <small class="text-danger" *ngIf="email?.touched && email?.invalid">
+            <span *ngIf="email?.hasError('required')">O email é obrigatório</span>
+            <span *ngIf="email?.hasError('email')">O email é inválido</span>
+            <span *ngIf="email?.hasError('onlysoulcode')">Domínio não permitido</span>
+        </small>
+    </div>
+    <div class="mb-3">
+        <label for="comentario" class="form-label">Comentário</label>
+        <textarea class="form-control" id="comentario" rows="3"></textarea>
+        <!-- <small class="text-danger" *ngIf="email?.touched && email?.invalid">
+            <span *ngIf="email?.hasError('required')">O email é obrigatório</span>
+            <span *ngIf="email?.hasError('email')">O email é inválido</span>
+            <span *ngIf="email?.hasError('onlysoulcode')">Domínio não permitido</span>
+        </small> -->
+    </div>
+    <button class="btn btn-primary" [disabled]="feedbackForm.invalid">Cadastrar</button>
+</form>
