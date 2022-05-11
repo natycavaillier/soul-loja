@@ -25,8 +25,8 @@ export class FeedbackUsuarioComponent implements OnInit {
     //E no array dentro do array são validações pro formulário
     nome: ['', [Validators.required, Validators.minLength(5)]], 
     email: ['', [Validators.required, Validators.email, onlySoulcode]],
-    comentario: [''],
-    nota: ['']
+    comentario: ['', [Validators.required, Validators.maxLength(50)]],
+    nota: ['', [Validators.required]]
   });
 
   get nome(){

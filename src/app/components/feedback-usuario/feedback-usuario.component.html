@@ -27,5 +27,15 @@
             <span *ngIf="email?.hasError('onlysoulcode')">Domínio não permitido</span>
         </small> -->
     </div>
+    <div class="mb-3">
+        <label for="nota" class="form-label">Nota</label>
+        <input formControlName="nota" id="nota" type="number" placeholder="0" min="0" max="5" class="form-control">
+
+        <small *ngIf="nota?.touched && nota?.invalid" class="text-danger">
+            <span *ngIf="nota?.hasError('required')">A nota é obrigatória</span>
+            <span ></span>
+        </small>
+
+    </div>
     <button class="btn btn-primary" [disabled]="feedbackForm.invalid">Cadastrar</button>
 </form>
