@@ -11,7 +11,7 @@ import { ProdutoComponent } from './components/produto/produto.component';
 import { ServicosComponent } from './components/servicos/servicos.component';
 import { ServicoComponent } from './components/servico/servico.component';
 import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EllipsisPipe } from './shared/pipes/ellipsis/ellipsis.pipe';
 import { AbbvPipe } from './shared/pipes/abbv/abbv.pipe';
 import { PowPipe } from './shared/pipes/pow/pow.pipe';
@@ -25,6 +25,7 @@ import { registerLocaleData } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 registerLocaleData(localePt);
 
@@ -48,13 +49,15 @@ registerLocaleData(localePt);
     CensorPipe,
     HomeComponent,
     LoginComponent,
-    NovoProdutoComponent
+    NovoProdutoComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt'}
