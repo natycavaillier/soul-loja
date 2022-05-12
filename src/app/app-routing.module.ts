@@ -4,6 +4,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { FeedbackUsuarioComponent } from './components/feedback-usuario/feedback-usuario.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NovaLojaComponent } from './components/nova-loja/nova-loja.component';
 import { NovoProdutoComponent } from './components/novo-produto/novo-produto.component';
 import { NovoServicoComponent } from './components/novo-servico/novo-servico.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'feedback-usuario', component: FeedbackUsuarioComponent },
   { path: 'nova-loja', component: NovaLojaComponent },
-  { path: 'sorteio', component: SorteioComponent }
+  { path: 'sorteio', component: SorteioComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
