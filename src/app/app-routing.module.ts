@@ -9,6 +9,7 @@ import { NovoProdutoComponent } from './components/novo-produto/novo-produto.com
 import { NovoServicoComponent } from './components/novo-servico/novo-servico.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ServicosComponent } from './components/servicos/servicos.component';
+import { SorteioComponent } from './components/sorteio/sorteio.component';
 import { TesteDataBindingComponent } from './components/teste-data-binding/teste-data-binding.component';
 
 //Gerencias as rotas da aplicação no geral
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
   { path: 'login', component: LoginComponent },
   { path: 'feedback-usuario', component: FeedbackUsuarioComponent },
-  { path: 'nova-loja', component: NovaLojaComponent }
+  { path: 'nova-loja', component: NovaLojaComponent },
+  { path: 'sorteio', component: SorteioComponent }
 ];
 
 @NgModule({

@@ -29,6 +29,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { FeedbackUsuarioComponent } from './components/feedback-usuario/feedback-usuario.component';
 import { NovaLojaComponent } from './components/nova-loja/nova-loja.component';
 import { NovoServicoComponent } from './components/novo-servico/novo-servico.component';
+import { SorteioComponent } from './components/sorteio/sorteio.component';
 
 registerLocaleData(localePt);
 
@@ -56,7 +57,8 @@ registerLocaleData(localePt);
     CadastroComponent,
     FeedbackUsuarioComponent,
     NovaLojaComponent,
-    NovoServicoComponent
+    NovoServicoComponent,
+    SorteioComponent
   ],
   imports: [
     BrowserModule,
