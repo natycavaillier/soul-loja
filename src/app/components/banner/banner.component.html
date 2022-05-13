@@ -15,5 +15,12 @@
             Você pode clicar no botão para ter os destaques
         </small>
     </ng-template>
+    <!-- Async é uma alternativa ao subscribe, uma forma resumida
+    Vai dar subscribe e quando a informação chegar vai dar certo
+    Async: Internamente ele da um subscrive, e quando nao precisa mais, ele da um
+    unsubscribe -->
+    <h5 class="display-5" *ngIf="relojim$ | async as teste">
+        {{teste | date: "HH:mm:ss"}}
+    </h5>
     <!-- <p *ngIf="destaques.length > 0">Temos destaques da semana!</p> -->
 </div>

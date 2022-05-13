@@ -31,6 +31,8 @@ import { NovaLojaComponent } from './components/nova-loja/nova-loja.component';
 import { NovoServicoComponent } from './components/novo-servico/novo-servico.component';
 import { SorteioComponent } from './components/sorteio/sorteio.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { GithubReposComponent } from './components/github-repos/github-repos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 registerLocaleData(localePt);
 
@@ -60,14 +62,16 @@ registerLocaleData(localePt);
     NovaLojaComponent,
     NovoServicoComponent,
     SorteioComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    GithubReposComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     {provide: LOCALE_ID, useValue: 'pt'}

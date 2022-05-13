@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-banner',
@@ -15,6 +16,17 @@ export class BannerComponent implements OnInit {
 
   destaques: string[] = ["Produtos de informática com 30% OFF", "Produtos de limpeza com 20% a partir de R$300,00", "Vale-presentes de R$100 da PlayStore", "Gift Cards de Valorant"];
   
+  //Padrão para indicar que a variavel nao tem um valor comum, é um observable
+  relojim$?: Observable<Date>;
+  
+  constructor() { }
+  
+  ngOnInit(): void {
+    this.relojim$ = interval(1000).pipe(
+      map((num) => new Date())
+    );
+  }
+  
   onToggle(){
     this.oculto = !this.oculto;
 
@@ -26,10 +38,8 @@ export class BannerComponent implements OnInit {
       this.callToAction = "Ocultar destaques";
     }
   }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
+function num(num: any): import("rxjs").OperatorFunction<number, unknown> {
+  throw new Error('Function not implemented.');
+}
+
