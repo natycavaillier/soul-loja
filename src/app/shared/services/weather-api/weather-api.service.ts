@@ -8,6 +8,7 @@ export interface WeatherData {
     temp_min: number;
     temp_max: number;
   }
+  name: string;
 }
 
 @Injectable({
