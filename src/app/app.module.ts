@@ -33,6 +33,9 @@ import { SorteioComponent } from './components/sorteio/sorteio.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { GithubReposComponent } from './components/github-repos/github-repos.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GithubUserComponent } from './components/github-user/github-user.component';
+import { GithubAllReposComponent } from './components/github-all-repos/github-all-repos.component';
+import { FinanceiroComponent } from './components/financeiro/financeiro.component';
 
 registerLocaleData(localePt);
 
@@ -63,7 +66,10 @@ registerLocaleData(localePt);
     NovoServicoComponent,
     SorteioComponent,
     NotFoundComponent,
-    GithubReposComponent
+    GithubReposComponent,
+    GithubUserComponent,
+    GithubAllReposComponent,
+    FinanceiroComponent
   ],
   imports: [
     BrowserModule,

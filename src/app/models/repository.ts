@@ -1,3 +1,9 @@
+export interface AllRepositories {
+    total_count: number;
+    incomplete_results: boolean;
+    items: Repository[];
+}
+
 export interface Repository {
     id: number;
     node_id: string;
@@ -93,6 +99,7 @@ export interface Owner {
     avatar_url: string;
     gravatar_id: string;
     url: string;
+    bio: string;
     html_url: string;
     followers_url: string;
     following_url: string;
@@ -100,6 +107,9 @@ export interface Owner {
     starred_url: string;
     subscriptions_url: string;
     organizations_url: string;
+    public_repos: number;
+    followers: number;
+    following: number;
     repos_url: string;
     events_url: string;
     received_events_url: string;
